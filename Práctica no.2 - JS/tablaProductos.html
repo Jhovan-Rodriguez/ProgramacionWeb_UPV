@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Listado de productos</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="css/productos.css">
+
+</head>
+<body class="hold-transition layout-top-nav">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+    <div class="container" style="display:inline-grid;">
+      <a href="dashboard.html" class="navbar-brand" style="display:flex; margin: auto;">
+        <img src="img/logo-removebg-preview (2).png" alt="UPV" class="brand-image img-circle elevation-3" style="opacity: .8; align-self: center;
+        width: auto;">
+        <span class="brand-text font-weight-light">WatchZone</span>
+      </a>
+
+      <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse" >
+        <!-- Left navbar links -->
+        <ul class="navbar-nav" id="opciones">
+          <li class="nav-item">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="formUsers.html" class="nav-link">                  
+                Registro de usuarios
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="formProducto.html" class="nav-link">                  
+                Registro de productos
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="formCategorias.html" class="nav-link">                  
+                Registro de categorias
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="productos.html" class="nav-link">                  
+                Lista de productos
+            </a>
+          </li>
+          
+        </ul>
+
+      </div>
+
+    </div>
+  </nav>
+  <br>
+  <!-- /.navbar -->
+  <div class="container-fluid as-full">
+    <div class="row as-full d-flex justify-content-center">
+    <div class="col-1"></div>
+      <div class="col-10 align-self-center" >
+        <div class="card-header" style="display:flex;">
+            <h1 class="card-title" style="margin: auto;">Tabla de productos</h1>
+          </div>
+        <!-- /.card-header -->
+        <div class="card-body table-responsive p-0">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+                  <th>Categoria</th>
+                  <th>Precio</th>
+                  <th>Descripción</th>
+                </tr>
+              </thead>
+              <tbody id="tabla_cuerpo">
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <br>
+          <div class="d-grid gap-2 col-3 mx-auto">
+            <button class="btn btn-primary" type="button" onclick="productos()">Ver productos</button>
+          </div>
+          <br>
+      </div>
+      <div class="col-1"></div>
+
+    </div>
+</div>
+  <!-- /.content-wrapper -->
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="js/tabla.js"></script>
+</body>
+</html>
