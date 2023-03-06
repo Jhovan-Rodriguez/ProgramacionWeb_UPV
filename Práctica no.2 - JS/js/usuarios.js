@@ -23,7 +23,7 @@ Array.from(forms).forEach(form => {
         valoresCheck.push(this.value);
     });
 
-    if (!form.checkValidity()) {
+    if (!form.checkValidity() || valoresCheck=="") {
       event.preventDefault()
       event.stopPropagation()
       Toast.fire({
@@ -32,12 +32,14 @@ Array.from(forms).forEach(form => {
       })
 
     }else{
+            //Se colocan los valores en el modal
         event.preventDefault()
-        let contenido = `<p>Código: ${formulario['codigo'].value}</p>
+        let contenido = `<p>Usuario: ${formulario['usuario'].value}</p>
         <p>Nombre: ${formulario['nombre'].value}</p>
-        <p>Categoría: ${formulario['categoria'].value}</p>
-        <p>Precio de venta: ${formulario['precioVenta'].value}</p>
-        <p>Precio de compra: ${formulario['precioCompra'].value}</p>`
+        <p>Correo: ${formulario['correo'].value}</p>
+        <p>Contraseña: ${formulario['password1'].value}</p>
+        <p>Contraseña 2: ${formulario['password2'].value}</p>
+        <p>Hobbies: ${valoresCheck}</p>`
         sectionCenter.innerHTML = contenido;
         document.getElementById("AbrirModal").click();
 

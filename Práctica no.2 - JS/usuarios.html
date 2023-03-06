@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Proveedores</title>
+    <title>Usuarios</title>
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,6 +19,7 @@
     <script
         nonce="70775702-c10f-4de9-b251-c9df4a2708c7">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
 </head>
+
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -70,7 +71,7 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="usuarios.html" class="nav-link">
+                                    <a href="usuarios.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Usuarios</p>
                                     </a>
@@ -88,7 +89,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="productos.html" class="nav-link active">
+                                    <a href="productos.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Productos</p>
                                     </a>
@@ -125,34 +126,34 @@
                             </ul>
                         </li>
                         <li class="nav-item menu">
-                          <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-tachometer-alt"></i>
-                              <p>
-                                  Categorías
-                                  <i class="right fas fa-angle-left"></i>
-                              </p>
-                          </a>
-                          <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                  <a href="cat_clientes.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Clientes</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_proveedores.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Proveedores</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_usuario.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Usuarios</p>
-                                  </a>
-                              </li>
-                          </ul>
-                      </li>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Categorías
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="cat_clientes.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Clientes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_proveedores.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Proveedores</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_usuario.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="lista_productos.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -166,18 +167,19 @@
                 </nav>
 
             </div>
+
         </aside>
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Registrar producto</h1>
+                            <h1 class="m-0">Registrar usuarios</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Registrar producto</li>
+                                <li class="breadcrumb-item active">Registrar usuarios</li>
                             </ol>
                         </div>
                     </div>
@@ -186,40 +188,54 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="card card-primary" style="margin:auto; width: 50%;">
+                        <div class="card card-primary" style="margin: auto;    width: 50%;">
                             <div class="card-header">
                               <h3 class="card-title">Registro</h3>
                             </div>
                             <!-- /.card-header -->
-                        <!-- form start -->
+                            <!-- form start -->
                           <form id="formulario" class="needs-validation" novalidate>
                             <div class="card-body">
                               <div class="form-group">
-                                <label for="exampleInputuser">Ingresar código (*)</label>
-                                <input type="text" class="form-control" id="codigo" placeholder="Ingresa el código del producto" required >
+                                <label for="exampleInputuser">Ingresa usuario (*)</label>
+                                <input type="text" class="form-control" id="usuario" placeholder="Ingresa tu usuario" required>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar nombre (*)</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del producto" required>
+                                <label for="exampleInputPassword1">Ingresa el nombre (*)</label>
+                                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre"  required>
                               </div>
                               <div class="form-group">
-                                <label>Ingresar Categoría (*)</label>
-                                <select class="form-control select2" style="width: 100%;" id="categoria" required>
-                                  <option selected="selected">Nuevos</option>
-                                  <option>Estrella</option>
-                                  <option>Temporada</option>
-                                  <option>Old-School</option>
-                                  <option>A la baja</option>
-                                  <option>Oferta</option>
-                                </select>
+                                <label for="exampleInputPassword1">Ingresa el correo electrónico (*)</label>
+                                <input type="email" class="form-control" id="correo" placeholder="Ingresa el correo electrónico" required>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de venta (*)</label>
-                                <input type="number" class="form-control" id="precioVenta" placeholder="Ingresa precio de venta del producto" required >
+                                <label for="exampleInputPassword1">Ingresa la contraseña (*)</label>
+                                <input type="password" class="form-control" id="password1" placeholder="Ingresa tu contraseña"  required>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de compra (*)</label>
-                                <input type="number" class="form-control" id="precioCompra" placeholder="Ingresa precio de compra del producto" required>
+                                <label for="exampleInputPassword1">Confirma tu contraseña (*)</label>
+                                <input type="password" class="form-control" id="password2" placeholder="Confirma tu  contraseña" required>
+                              </div>
+                              <label for="form-check">Ingresa tus hobbies</label>
+                              <div class="form-check">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Deportes">
+                                        <label class="form-check-label" for="exampleCheck1">Deportes</label>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Leer">
+                                        <label class="form-check-label" for="exampleCheck1">Leer</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" value="VideoJuegos">
+                                        <label class="form-check-label" for="exampleCheck1">Videojuegos</label>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Programar">
+                                        <label class="form-check-label" for="exampleCheck1">Programar</label>
+                                    </div>
+                                </div>
                               </div>
                             </div>
                             <div class="card-footer">
@@ -272,6 +288,7 @@
             reserved.
         </footer>
     </div>
+
     <!-- jQuery -->
     <script src="plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -282,8 +299,8 @@
     <!-- SweetAlert2 -->
     <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
-    <script src="js/productos.js"></script>
 
+    <script src="js/usuarios.js"></script>
 </body>
 
 </html>

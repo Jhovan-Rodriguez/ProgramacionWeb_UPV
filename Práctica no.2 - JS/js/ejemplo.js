@@ -23,7 +23,7 @@ Array.from(forms).forEach(form => {
         valoresCheck.push(this.value);
     });
 
-    if (!form.checkValidity()) {
+    if (!form.checkValidity() || valoresCheck=="") {
       event.preventDefault()
       event.stopPropagation()
       Toast.fire({
@@ -35,9 +35,7 @@ Array.from(forms).forEach(form => {
         event.preventDefault()
         let contenido = `<p>Código: ${formulario['codigo'].value}</p>
         <p>Nombre: ${formulario['nombre'].value}</p>
-        <p>Categoría: ${formulario['categoria'].value}</p>
-        <p>Precio de venta: ${formulario['precioVenta'].value}</p>
-        <p>Precio de compra: ${formulario['precioCompra'].value}</p>`
+        <p>Correo: ${formulario['categoria'].value}</p>`
         sectionCenter.innerHTML = contenido;
         document.getElementById("AbrirModal").click();
 

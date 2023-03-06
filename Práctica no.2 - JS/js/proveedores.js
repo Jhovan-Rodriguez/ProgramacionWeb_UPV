@@ -2,9 +2,9 @@
 'use strict'
 
 //Declaración de variables para las validaciones y colocación de elementos
-const forms = document.querySelectorAll('.needs-validation');
+const forms = document.querySelectorAll('.needs-validation')
 var formulario = document.forms['formulario'];
-const sectionCenter = document.getElementById("contenido");
+const sectionCenter = document.getElementById("contenido")
 
 //Inicialización de alertas 
 var Toast = Swal.mixin({
@@ -17,12 +17,6 @@ var Toast = Swal.mixin({
 // Validación del formulario Clientes
 Array.from(forms).forEach(form => {
   form.addEventListener('submit', event => {
-    let valoresCheck = [];
-
-    $("input[type=checkbox]:checked").each(function(){
-        valoresCheck.push(this.value);
-    });
-
     if (!form.checkValidity()) {
       event.preventDefault()
       event.stopPropagation()
@@ -33,11 +27,15 @@ Array.from(forms).forEach(form => {
 
     }else{
         event.preventDefault()
-        let contenido = `<p>Código: ${formulario['codigo'].value}</p>
+        let contenido = `<p>ID: ${formulario['id_proveedor'].value}</p>
         <p>Nombre: ${formulario['nombre'].value}</p>
-        <p>Categoría: ${formulario['categoria'].value}</p>
-        <p>Precio de venta: ${formulario['precioVenta'].value}</p>
-        <p>Precio de compra: ${formulario['precioCompra'].value}</p>`
+        <p>Apellido Paterno: ${formulario['a_paterno'].value}</p>
+        <p>Apellido Materno: ${formulario['a_materno'].value}</p>
+        <p>Correo: ${formulario['correo'].value}</p>
+        <p>Teléfono: ${formulario['telefono'].value}</p>
+        <p>Dirección: ${formulario['direccion'].value}</p>
+        <p>RFC: ${formulario['rfc'].value}</p>
+        <p>Categoria: ${formulario['categoria'].value}</p>`
         sectionCenter.innerHTML = contenido;
         document.getElementById("AbrirModal").click();
 

@@ -80,6 +80,7 @@ ul {
 a {
   text-decoration: none;
 }
+/*
 img:not(.logo) {
   width: 100%;
 }
@@ -97,6 +98,7 @@ h4 {
   margin-bottom: 0.75rem;
   font-family: var(--ff-primary);
 }
+*/
 h1 {
   font-size: 3rem;
 }
@@ -111,7 +113,6 @@ h4 {
 }
 p {
   margin-bottom: 1.25rem;
-  color: var(--clr-grey-5);
 }
 
 #opciones a{
@@ -181,9 +182,6 @@ Menu
 ===============
 */
 
-.menu {
-  padding: 5rem 0;
-}
 .title {
   text-align: center;
   margin-bottom: 2rem;
@@ -257,6 +255,7 @@ Menu
     grid-template-columns: 225px 1fr;
     gap: 0 1.25rem;
     max-width: 40rem;
+    display: flex;
   }
   .photo {
     height: 175px;
@@ -265,7 +264,6 @@ Menu
 @media screen and (min-width: 1200px) {
   .section-center {
     width: 95vw;
-    grid-template-columns: 1fr 1fr;
   }
   .photo {
     height: 150px;

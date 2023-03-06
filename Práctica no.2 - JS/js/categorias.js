@@ -1,15 +1,10 @@
-//JORGE JHOVAN RODRIGUEZ MORENO
+//Establecimineto de modo estricto de JS
+'use strict'
 
-// Creación de variables para contener los elementos HTML
-const formulario = document.getElementById("formulario");
-
-const clave = document.getElementById("clave");
-const nombre = document.getElementById("nombre");
-
-
-const txtClave = document.getElementById("parrafoClave");
-const txtNombre = document.getElementById("parrafoNombre");
-
+//Declaración de variables para las validaciones y colocación de elementos
+const forms = document.querySelectorAll('.needs-validation')
+var formulario = document.forms['formulario'];
+const sectionCenter = document.getElementById("contenido")
 
 //Inicialización de alertas 
 var Toast = Swal.mixin({
@@ -17,48 +12,29 @@ var Toast = Swal.mixin({
     position: 'top-end',
     showConfirmButton: false,
     timer: 3000
-  });
+});
 
-//Método submit del formulario
-formulario.addEventListener("submit", (e) => {
-    e.preventDefault();
-    // validar Clave
-    if (clave.value=="") {
-         clave.classList.add("is-invalid");
-         Toast.fire({
-            icon: 'error',
-            title: 'Favor de ingresar una clave'
-          })
-          return false;
-    } else {
-         clave.classList.remove("is-invalid");
-         clave.classList.add("is-valid");
-    }
-
-    // validar nombre
-    if (nombre.value=="") {
-         nombre.classList.add("is-invalid");
-         Toast.fire({
-            icon: 'error',
-            title: 'Favor de ingresar un nombre'
-          })
-          return false;
-    } else {
-         nombre.classList.remove("is-invalid");
-         nombre.classList.add("is-valid");
-    }
-
-    if(clave.value==""  && nombre.value==""){
-        Toast.fire({
-            icon: 'error',
-            title: 'Favor de llenar el formulario'
-          })
+// Validación del formulario Clientes
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+      Toast.fire({
+        icon: 'error',
+        title: 'Datos incompletos'
+      })
 
     }else{
-        txtClave.innerHTML="Clave de la categoria del producto :" + clave.value;
-        txtNombre.innerHTML="Nombre de la categoría: "+ nombre.value;
+            //Se colocan los valores en el modal
+
+        event.preventDefault()
+        let contenido = `<p>Clave: ${formulario['clave'].value}</p>
+        <p>Nombre: ${formulario['nombre'].value}</p>`
+        sectionCenter.innerHTML = contenido;
         document.getElementById("AbrirModal").click();
 
     }
- 
-});
+    form.classList.add('was-validated')
+  }, false)
+})

@@ -82,13 +82,13 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="proveedores.html" class="nav-link">
+                                    <a href="proveedores.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Proveedores</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="productos.html" class="nav-link active">
+                                    <a href="productos.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Productos</p>
                                     </a>
@@ -125,34 +125,34 @@
                             </ul>
                         </li>
                         <li class="nav-item menu">
-                          <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-tachometer-alt"></i>
-                              <p>
-                                  Categorías
-                                  <i class="right fas fa-angle-left"></i>
-                              </p>
-                          </a>
-                          <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                  <a href="cat_clientes.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Clientes</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_proveedores.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Proveedores</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_usuario.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Usuarios</p>
-                                  </a>
-                              </li>
-                          </ul>
-                      </li>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Categorías
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="cat_clientes.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Clientes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_proveedores.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Proveedores</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_usuario.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="lista_productos.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -172,12 +172,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Registrar producto</h1>
+                            <h1 class="m-0">Registrar Proveedor</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="dashboard.html">Dashboard</a></li>
-                                <li class="breadcrumb-item active">Registrar producto</li>
+                                <li class="breadcrumb-item active">Registrar proveedor</li>
                             </ol>
                         </div>
                     </div>
@@ -186,40 +186,78 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="card card-primary" style="margin:auto; width: 50%;">
+                        <div class="card card-primary" style="margin:auto;">
                             <div class="card-header">
                               <h3 class="card-title">Registro</h3>
                             </div>
                             <!-- /.card-header -->
-                        <!-- form start -->
+                            <!-- form start -->
                           <form id="formulario" class="needs-validation" novalidate>
                             <div class="card-body">
-                              <div class="form-group">
-                                <label for="exampleInputuser">Ingresar código (*)</label>
-                                <input type="text" class="form-control" id="codigo" placeholder="Ingresa el código del producto" required >
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="exampleInputuser">ID del Proveedor (*)</label>
+                                            <input type="text" class="form-control" id="id_proveedor" placeholder="Ingresa el identificador del cliente"  required>
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Nombre(s) (*)</label>
+                                            <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre" required>
+                                        </div>
+                                    </div>
+                                  </div>
+                              <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Apellido Paterno (*)</label>
+                                        <input type="text" class="form-control" id="a_paterno" placeholder="Apellido paterno" required>  
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Apellido Materno(*)</label>
+                                        <input type="text" class="form-control" id="a_materno" placeholder="Apellido materno" required>  
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Correo electrónico (*)</label>
+                                        <input type="email" class="form-control" id="correo" placeholder="Ingresa el correo electrónico" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Teléfono (*)</label>
+                                        <input type="number" class="form-control" id="telefono" placeholder="Ingresa el télefono" required>
+                                    </div>
+                                </div>
                               </div>
                               <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar nombre (*)</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del producto" required>
+                                <label for="exampleInputPassword1">Dirección (*)</label>
+                                <input type="text" class="form-control" id="direccion" placeholder="Ingresa la dirección"required>
                               </div>
-                              <div class="form-group">
-                                <label>Ingresar Categoría (*)</label>
-                                <select class="form-control select2" style="width: 100%;" id="categoria" required>
-                                  <option selected="selected">Nuevos</option>
-                                  <option>Estrella</option>
-                                  <option>Temporada</option>
-                                  <option>Old-School</option>
-                                  <option>A la baja</option>
-                                  <option>Oferta</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de venta (*)</label>
-                                <input type="number" class="form-control" id="precioVenta" placeholder="Ingresa precio de venta del producto" required >
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de compra (*)</label>
-                                <input type="number" class="form-control" id="precioCompra" placeholder="Ingresa precio de compra del producto" required>
+                              <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">RFC (*)</label>
+                                        <input type="text" class="form-control" id="rfc" placeholder="Ingresa el RFC" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label>Ingresar Categoría (*)</label>
+                                        <select class="form-control select2" style="width: 100%;" placeholder="Ingresa categoria" id="categoria" required>
+                                          <option selected="selected">Ropa</option>
+                                          <option>Accesorios</option>
+                                          <option>Hoddies</option>
+                                          <option>Sin categoría</option>
+                                        </select>
+                                    </div>
+                                </div>
                               </div>
                             </div>
                             <div class="card-footer">
@@ -282,7 +320,7 @@
     <!-- SweetAlert2 -->
     <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
-    <script src="js/productos.js"></script>
+    <script src="js/proveedores.js"></script>
 
 </body>
 

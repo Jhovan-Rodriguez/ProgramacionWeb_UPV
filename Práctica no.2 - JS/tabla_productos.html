@@ -16,6 +16,7 @@
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/productos.css">
     <script
         nonce="70775702-c10f-4de9-b251-c9df4a2708c7">(function (w, d) { !function (bv, bw, bx, by) { bv[bx] = bv[bx] || {}; bv[bx].executed = []; bv.zaraz = { deferred: [], listeners: [] }; bv.zaraz.q = []; bv.zaraz._f = function (bz) { return function () { var bA = Array.prototype.slice.call(arguments); bv.zaraz.q.push({ m: bz, a: bA }) } }; for (const bB of ["track", "set", "debug"]) bv.zaraz[bB] = bv.zaraz._f(bB); bv.zaraz.init = () => { var bC = bw.getElementsByTagName(by)[0], bD = bw.createElement(by), bE = bw.getElementsByTagName("title")[0]; bE && (bv[bx].t = bw.getElementsByTagName("title")[0].text); bv[bx].x = Math.random(); bv[bx].w = bv.screen.width; bv[bx].h = bv.screen.height; bv[bx].j = bv.innerHeight; bv[bx].e = bv.innerWidth; bv[bx].l = bv.location.href; bv[bx].r = bw.referrer; bv[bx].k = bv.screen.colorDepth; bv[bx].n = bw.characterSet; bv[bx].o = (new Date).getTimezoneOffset(); if (bv.dataLayer) for (const bI of Object.entries(Object.entries(dataLayer).reduce(((bJ, bK) => ({ ...bJ[1], ...bK[1] }))))) zaraz.set(bI[0], bI[1], { scope: "page" }); bv[bx].q = []; for (; bv.zaraz.q.length;) { const bL = bv.zaraz.q.shift(); bv[bx].q.push(bL) } bD.defer = !0; for (const bM of [localStorage, sessionStorage]) Object.keys(bM || {}).filter((bO => bO.startsWith("_zaraz_"))).forEach((bN => { try { bv[bx]["z_" + bN.slice(7)] = JSON.parse(bM.getItem(bN)) } catch { bv[bx]["z_" + bN.slice(7)] = bM.getItem(bN) } })); bD.referrerPolicy = "origin"; bD.src = "/cdn-cgi/zaraz/s.js?z=" + btoa(encodeURIComponent(JSON.stringify(bv[bx]))); bC.parentNode.insertBefore(bD, bC) };["complete", "interactive"].includes(bw.readyState) ? zaraz.init() : bv.addEventListener("DOMContentLoaded", zaraz.init) }(w, d, "zarazData", "script"); })(window, document);</script>
 </head>
@@ -61,7 +62,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item menu">
-                            <a href="#" class="nav-link active">
+                            <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Registros
@@ -88,7 +89,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="productos.html" class="nav-link active">
+                                    <a href="productos.html" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Productos</p>
                                     </a>
@@ -96,7 +97,7 @@
                             </ul>
                         </li>
                         <li class="nav-item menu">
-                            <a href="#" class="nav-link">
+                            <a href="#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Tablas
@@ -117,7 +118,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="tabla_productos.html" class="nav-link">
+                                    <a href="tabla_productos.html" class="nav-link active">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Productos</p>
                                     </a>
@@ -125,34 +126,34 @@
                             </ul>
                         </li>
                         <li class="nav-item menu">
-                          <a href="#" class="nav-link">
-                              <i class="nav-icon fas fa-tachometer-alt"></i>
-                              <p>
-                                  Categorías
-                                  <i class="right fas fa-angle-left"></i>
-                              </p>
-                          </a>
-                          <ul class="nav nav-treeview">
-                              <li class="nav-item">
-                                  <a href="cat_clientes.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Clientes</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_proveedores.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Proveedores</p>
-                                  </a>
-                              </li>
-                              <li class="nav-item">
-                                  <a href="cat_usuario.html" class="nav-link">
-                                      <i class="far fa-circle nav-icon"></i>
-                                      <p>Usuarios</p>
-                                  </a>
-                              </li>
-                          </ul>
-                      </li>
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Categorías
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="cat_clientes.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Clientes</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_proveedores.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Proveedores</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="cat_usuario.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Usuarios</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class="nav-item">
                             <a href="lista_productos.html" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -186,72 +187,35 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="card card-primary" style="margin:auto; width: 50%;">
-                            <div class="card-header">
-                              <h3 class="card-title">Registro</h3>
-                            </div>
-                            <!-- /.card-header -->
-                        <!-- form start -->
-                          <form id="formulario" class="needs-validation" novalidate>
-                            <div class="card-body">
-                              <div class="form-group">
-                                <label for="exampleInputuser">Ingresar código (*)</label>
-                                <input type="text" class="form-control" id="codigo" placeholder="Ingresa el código del producto" required >
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar nombre (*)</label>
-                                <input type="text" class="form-control" id="nombre" placeholder="Ingresa el nombre del producto" required>
-                              </div>
-                              <div class="form-group">
-                                <label>Ingresar Categoría (*)</label>
-                                <select class="form-control select2" style="width: 100%;" id="categoria" required>
-                                  <option selected="selected">Nuevos</option>
-                                  <option>Estrella</option>
-                                  <option>Temporada</option>
-                                  <option>Old-School</option>
-                                  <option>A la baja</option>
-                                  <option>Oferta</option>
-                                </select>
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de venta (*)</label>
-                                <input type="number" class="form-control" id="precioVenta" placeholder="Ingresa precio de venta del producto" required >
-                              </div>
-                              <div class="form-group">
-                                <label for="exampleInputPassword1">Ingresar precio de compra (*)</label>
-                                <input type="number" class="form-control" id="precioCompra" placeholder="Ingresa precio de compra del producto" required>
-                              </div>
-                            </div>
-                            <div class="card-footer">
-                              <button type="submit" class="btn btn-primary">Guardar</button>
-                            </div>
-                          </form>
-                          </div>
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Categoria</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Descripción</th>
+                              </tr>
+                            </thead>
+                            <tbody id="tabla_cuerpo">
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 col-3 mx-auto">
+                          <button class="btn btn-primary" type="button" onclick="productos()">Ver productos</button>
+                        </div>
+                        <br>
                     </div>
                 </div>
             </div>
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default" id="AbrirModal" style="display: none;">
-                Launch Default Modal
-            </button>
-            <div class="modal fade" id="modal-default">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h4 class="modal-title">Datos ingresados</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body" id="contenido">
-                    </div>
-                    <div class="modal-footer justify-content-between">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    </div>
-                  </div>
-                  <!-- /.modal-content -->
-                </div>
-                <!-- /.modal-dialog -->
-              </div>
         </div>
         <aside class="control-sidebar control-sidebar-dark">
 
@@ -282,7 +246,7 @@
     <!-- SweetAlert2 -->
     <script src="plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="dist/js/adminlte.min.js"></script>
-    <script src="js/productos.js"></script>
+    <script src="js/tabla.js"></script>
 
 </body>
 

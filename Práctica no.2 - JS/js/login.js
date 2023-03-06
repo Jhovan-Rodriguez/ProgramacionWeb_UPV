@@ -1,48 +1,49 @@
-$(document).ready(function(){
-    var usuario_default = "Admin";
-    var pass_default = "Admin";
-    var Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000
-      });
-    $('#guardar').click(function(event){
+
+ //Establecimineto de modo estricto de JS
+'use strict'
+
+//Declaración de variables para las validaciones y colocación de elementos
+const forms = document.querySelectorAll('.needs-validation');
+var formulario = document.forms['formulario'];
+var usuario_default = "Admin";
+var pass_default = "Admin";
+//Inicialización de alertas 
+var Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000
+});
+
+// Validación del formulario Clientes
+Array.from(forms).forEach(form => {
+  form.addEventListener('submit', event => {
+    if (!form.checkValidity()) {
+      event.preventDefault()
+      event.stopPropagation()
+      Toast.fire({
+        icon: 'error',
+        title: 'Acceso incorrecto'
+      })
+
+    }else{
         event.preventDefault();
-        var user = $('#inputUser').val();
-        var contra = $('#inputPassword').val();
+        var user = $('#User').val();
+        var contra = $('#Password').val();
         if((user == usuario_default)&&(contra == pass_default)){
             location.href = 'dashboard.html';
+        }else{
+          Toast.fire({
+            icon: 'error',
+            title: 'Datos incorrectos'
+          })
         }
-        if((user != usuario_default)&&(contra != pass_default)){
-            Toast.fire({
-                icon: 'error',
-                title: 'Los datos con incorrectos'
-              })
-        }
-        if((user != usuario_default)){
-                Toast.fire({
-                  icon: 'error',
-                  title: 'El usuario es incorrecto'
-                })
-        }
-        if((contra != pass_default)){
-            Toast.fire({
-              icon: 'error',
-              title: 'La contraseña es incorrecta'
-            })
-        }
-        if((contra == '') || (user=='')){
-            Toast.fire({
-                icon: 'error',
-                title: 'Los datos estan incompletos'
-              })
-        }
-        
-    });
 
+    }
+    form.classList.add('was-validated')
+  }, false)
+})
 
- });
 
 
 
