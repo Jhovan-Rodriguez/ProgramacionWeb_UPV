@@ -1,5 +1,5 @@
 
-
+// Funcion para seleccionar la galeria 
 function getElement(selection) {
   const element = document.querySelector(selection);
   if (element) {
@@ -23,12 +23,12 @@ class Gallery {
     this.closeBtn = getElement('.close-btn');
     this.nextBtn = getElement('.next-btn');
     this.prevBtn = getElement('.prev-btn');
-
-    this.closeModal = this.closeModal.bind(this);
-    this.nextImage = this.nextImage.bind(this);
-    this.prevImage = this.prevImage.bind(this);
-    this.chooseImage = this.chooseImage.bind(this);
-    // container event
+    //Funciones de los botones 
+    this.cerrarModal = this.cerrarModal.bind(this);
+    this.imagenSig = this.imagenSig.bind(this);
+    this.imagenAnt = this.imagenAnt.bind(this);
+    this.escogerImagen = this.escogerImagen.bind(this);
+    // container event para abrir el modal
     this.container.addEventListener(
       'click',
       function (e) {
@@ -50,10 +50,10 @@ class Gallery {
       })
       .join('');
     this.modal.classList.add('open');
-    this.closeBtn.addEventListener('click', this.closeModal);
-    this.nextBtn.addEventListener('click', this.nextImage);
-    this.prevBtn.addEventListener('click', this.prevImage);
-    this.modalImages.addEventListener('click', this.chooseImage);
+    this.closeBtn.addEventListener('click', this.cerrarModal);
+    this.nextBtn.addEventListener('click', this.imagenSig);
+    this.prevBtn.addEventListener('click', this.imagenAnt);
+    this.modalImages.addEventListener('click', this.escogerImagen);
   }
 
   setMainImage(selectedImage) {
@@ -61,15 +61,15 @@ class Gallery {
     this.imageName.textContent = selectedImage.title;
   }
   //Funcion para cerrar el modal
-  closeModal() {
+  cerrarModal() {
     this.modal.classList.remove('open');
-    this.closeBtn.removeEventListener('click', this.closeModal);
-    this.nextBtn.removeEventListener('click', this.nextImage);
-    this.prevBtn.removeEventListener('click', this.prevImage);
-    this.modalImages.removeEventListener('click', this.chooseImage);
+    this.closeBtn.removeEventListener('click', this.cerrarModal);
+    this.nextBtn.removeEventListener('click', this.imagenSig);
+    this.prevBtn.removeEventListener('click', this.imagenAnt);
+    this.modalImages.removeEventListener('click', this.escogerImagen);
   }
   //Funcion para selecionar la siguiente imagen
-  nextImage() {
+  imagenSig() {
     const selected = this.modalImages.querySelector('.selected');
     const next =
       selected.nextElementSibling || this.modalImages.firstElementChild;
@@ -78,7 +78,7 @@ class Gallery {
     this.setMainImage(next);
   }
     //Funcion para selecionar la imagen anterior
-  prevImage() {
+  imagenAnt() {
     const selected = this.modalImages.querySelector('.selected');
     const prev =
       selected.previousElementSibling || this.modalImages.lastElementChild;
@@ -87,7 +87,7 @@ class Gallery {
     this.setMainImage(prev);
   }
   //Funcion de seleccionar imagen dentro del modal
-  chooseImage(e) {
+  escogerImagen(e) {
     if (e.target.classList.contains('modal-img')) {
       const selected = this.modalImages.querySelector('.selected');
       selected.classList.remove('selected');
