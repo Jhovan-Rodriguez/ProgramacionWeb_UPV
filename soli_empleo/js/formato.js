@@ -9,6 +9,9 @@ var datos = {}
 urlParams.forEach(function(value,key){
     datos[key]=value;
 });
+
+console.log(datos);
+
 // Se convierte el objeto a un archivo JSON 
 var json = JSON.stringify(datos);
 // Se crea un objeto blob para darle formato al archivo que se va a descargar
@@ -19,4 +22,4 @@ hipervinculo.download='datos.json';
 hipervinculo.href=window.URL.createObjectURL(blob);
 
 document.body.appendChild(hipervinculo);
-hipervinculo.click();
+//hipervinculo.click();
