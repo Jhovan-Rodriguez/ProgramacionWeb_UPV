@@ -3,7 +3,8 @@
 
 //Declaración de variables para las validaciones y colocación de elementos
 const forms = document.querySelectorAll('.needs-validation');
-var formulario = document.forms['formulario'];
+const formulario = document.querySelector('#formulario');
+//const form = document.forms['formulario'];
 
 const loaderBtn = document.getElementById("loader-btn");
 const loaderOverlay = document.getElementById("loader-overlay");
@@ -28,8 +29,6 @@ var Toast = Swal.mixin({
 // Validación del formulario Clientes
 Array.from(forms).forEach(form => {
   form.addEventListener('submit', event => {
-
-
     if (!form.checkValidity()) {
       event.preventDefault()
       event.stopPropagation()
@@ -40,32 +39,32 @@ Array.from(forms).forEach(form => {
 
     }else{
         //Se colocan los valores en el modal
-        event.preventDefault()
-        const datos = new FormData(forms);
+        event.preventDefault();
+        const datos = new FormData(formulario);
+        //var arrayForm = []
+        //datos.forEach(function(value,key){
+        //    arrayForm.push({'campo':key,'valor':value});
+        //});
+        // Enviar los datos a la página de destino mediante una solicitud POST
 
 
-        var arrayForm = []
-        datos.forEach(function(value,key){
-            arrayForm.push({'campo':key,'valor':'value'});
-        });
-        			// Enviar los datos a la página de destino mediante una solicitud POST
-		fetch("formatoEmpleo.html", {
-				method: "POST",
-				body: datos
-		})
-		then(response => {
-            Toast.fire({
-                icon: 'success',
-                title: 'Correcto'
-              });
-
-		})
-		.catch(error => {
-            Toast.fire({
-                icon: 'error',
-                title: 'Error'
-              })
-		});
+		    fetch("formatoEmpleo.html", {
+		    		method: "POST",
+		    		body: datos
+		    })
+		    .then(response => {
+                Toast.fire({
+                    icon: 'success',
+                    title: 'Correcto'
+                  });
+                
+		    })
+		    .catch(error => {
+                Toast.fire({
+                    icon: 'error',
+                    title: 'Error'
+                  })
+		    });
 
 
     }
