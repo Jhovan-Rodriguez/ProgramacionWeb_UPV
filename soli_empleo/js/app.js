@@ -1,5 +1,64 @@
-function downloadJSON() {
+function generarForm() {
     // Obtener los datos del formulario
+    const forms = document.querySelectorAll('.needs-validation');
+    const loaderOverlay = document.getElementById("loader-overlay");    //Inicialización de alertas 
+    
+    const formulario = document.getElementById('formulario');
+    const inputs = formulario.querySelectorAll('input');
+
+    const selects = formulario.querySelectorAll('select');
+
+    var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000
+    });
+
+    // Validación del formulario Clientes
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+        
+        
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+            Toast.fire({
+              icon: 'error',
+              title: 'Datos incompletos'
+            })
+        
+          }else{
+            event.preventDefault()
+            loaderOverlay.classList.remove("d-none");
+            
+            for (let i = 0; i < inputs.length; i++) {
+                inputs[i].setAttribute('readonly', true);
+            }
+
+            for (let i = 0; i < selects.length; i++) {
+                selects[i].setAttribute('disabled', "disabled");
+            }
+
+            setTimeout(function() {
+              loaderOverlay.classList.add("d-none");
+            }, 3000);
+
+            
+            const loaderJS = document.getElementById("btnJson");
+            loaderJS.style.display = "inline-block";
+
+            const loaderBtn = document.getElementById("loader-btn");
+            loaderBtn.style.display = "none";
+
+            }
+        form.classList.add('was-validated')
+        }, false)
+    })
+}   
+
+function downloadJSON(){
+    console.log("Descargando JSON");
     const form = document.forms['formulario'];
     let values = [form["puesto_solicitado"].value,
     form["fecha"].value,form["nombre"].value,
@@ -26,9 +85,9 @@ function downloadJSON() {
     form["relacion_referencia2"].value];
 
 
-   
+
     // Crear objeto con los datos del formulario
-    let formData = {
+    var formData = {
     puesto_solicitado: values[0],
     fecha: values[1],
     nombre: values[2],
@@ -57,13 +116,18 @@ function downloadJSON() {
     };
 
     // Convertir objeto a JSON
-    let jsonData = JSON.stringify(formData);
-            
+    var jsonData = JSON.stringify(formData);
+
     // Crear elemento <a> para descargar el archivo
-    let downloadLink = document.createElement("a");
+    var downloadLink = document.createElement("a");
     downloadLink.setAttribute("href", "data:text/json;charset=utf-8," + encodeURIComponent(jsonData));
     downloadLink.setAttribute("download", "solicitud-empleo.json");
-    
+
     // Simular clic en el enlace de descarga
     downloadLink.click();
+}
+
+
+function cancelar(){
+    location.href='empleo.html'
 }
