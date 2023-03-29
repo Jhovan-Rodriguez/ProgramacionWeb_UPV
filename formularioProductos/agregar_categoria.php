@@ -11,6 +11,7 @@
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
     <link rel="stylesheet" href="sources/plugins/fontawesome-free/css/all.min.css">
+
     <!-- Theme style -->
     <link rel="stylesheet" href="sources/dist/css/adminlte.min.css?v=3.2.0">
     <!-- SweetAlert2 -->
@@ -28,7 +29,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Añadir categoria</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
@@ -40,65 +41,32 @@
             </div>
             <div class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                      <div class="col-lg-6 col-6">
-                      <!-- small box -->
-                        <div class="small-box bg-info">
-                          <div class="inner">
-                            <h3>Productos</h3>
-                            <p>Lista de productos!</p>
-                          </div>
-                          <div class="icon">
-                          <i class="ion ion-bag"></i>
-                        </div>
-                        <a href="http://watchzone.me/formularioProductos/productos.php" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
+                <div class="row as-full d-flex justify-content-center">
+          <div class="col-10 align-self-center" >
+            <div class="card card-primary">
+                <div class="card-header">
+                  <h3 class="card-title">Ingresar categoria</h3>
+                </div>
+                <!-- /.card-header -->
+            <!-- form start -->
+              <form id="formulario" action="php/reg_categoria.php" method="post" class="needs-validation" novalidate>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="exampleInputuser">Ingresar código (*)</label>
+                        <input required type="text" class="form-control" id="codigo" name="codigo" placeholder="Ingresa el código del categoria"  >
                     </div>
-                    <!-- ./col -->
-                    <div class="col-lg-6 col-6">
-                      <!-- small box -->
-                      <div class="small-box bg-success">
-                        <div class="inner">
-                          <h3>Categorías</h3>
-                          <p>Lista de categorías!</p>
-                        </div>
-                        <div class="icon">
-                          <i class="ion ion-stats-bars"></i>
-                        </div>
-                        <a href="http://watchzone.me/formularioProductos/categorias.php" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Ingresar nombre (*)</label>
+                        <input required type="text" class="form-control" id="nombre" name="nombre" placeholder="Ingresa el nombre del categoria">
                     </div>
-                  </div> 
-                  <div class="row">
-                  <!-- ./col -->
-                    <div class="col-lg-6 col-6">
-                      <!-- small box -->
-                      <div class="small-box bg-warning">
-                        <div class="inner">
-                          <h3>Registrar Producto</h3>
-                          <p>Añade un producto a la tienda!</p>
-                        </div>
-                        <div class="icon">
-                          <i class="ion ion-person-add"></i>
-                        </div>
-                        <a href="http://watchzone.me/formularioProductos/agregar_producto.php" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-6 col-6">
-                      <!-- small box -->
-                      <div class="small-box bg-danger">
-                        <div class="inner">
-                          <h3>Registrar Categoría</h3>
-                          <p>Añade una nueva categoría de productos</p>
-                        </div>
-                        <div class="icon">
-                          <i class="ion ion-pie-graph"></i>
-                        </div>
-                        <a href="http://watchzone.me/formularioProductos/agregar_categoria.php" class="small-box-footer">Más información <i class="fas fa-arrow-circle-right"></i></a>
-                      </div>
-                    </div>
-                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+              </form>
+              </div>
+          </div>
+        </div>
                   <div>
                   </div>
                 </div>
@@ -133,6 +101,7 @@
     <!-- SweetAlert2 -->
     <script src="sources/plugins/sweetalert2/sweetalert2.min.js"></script>
     <script src="sources/dist/js/adminlte.min.js"></script>
+    <script src="js/app.js"></script>
 
 </body>
 
