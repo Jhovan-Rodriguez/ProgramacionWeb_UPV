@@ -22,6 +22,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php
+        // Sentencia SQL para obtener las categorias de los productos
         include("layouts/aside.php");
         include("php/conexion.php");
         global $pdo;

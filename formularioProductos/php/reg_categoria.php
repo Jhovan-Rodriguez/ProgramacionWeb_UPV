@@ -1,4 +1,5 @@
 <?php
+//Registro de las categorias a la base de datos
     include("conexion.php");
     global $pdo;
     $codigo=$_REQUEST['codigo'];

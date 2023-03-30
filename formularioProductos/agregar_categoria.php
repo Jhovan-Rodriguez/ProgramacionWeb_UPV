@@ -22,6 +22,7 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
         <?php
+        //Añadir el aside en el HTML
         include("layouts/aside.php");
         ?>
         <div class="content-wrapper">

@@ -22,6 +22,7 @@
     <div class="wrapper">
 
         <?php
+        //Sentecia select para la tabla producto
         include("layouts/aside.php");
         include("php/conexion.php");
         global $pdo;
